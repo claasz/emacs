@@ -1,0 +1,8 @@
+alias i='ls -lhB'
+alias ..='cd ..'
+alias ...='cd ...'
+# alias s='hg st'
+alias t='git s'
+alias b='git branch | grep "*"'
+alias d='git diff master...'
+alias gd='git diff --name-status master...'
