@@ -1,0 +1,4 @@
+# $ git config --get-regexp ^alias
+
+alias.ci commit
+alias.s status --short
