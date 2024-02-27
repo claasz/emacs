@@ -1,4 +1,6 @@
 # $ git config --get-regexp ^alias
+# claas@mate:~$ git config --global alias.ci commit
+# claas@mate:~$ git config --global alias.s status --short
 
 alias.ci commit
 alias.s status --short
