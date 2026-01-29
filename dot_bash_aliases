@@ -6,3 +6,6 @@ alias t='git s'
 alias b='git branch | grep "*"'
 alias d='git diff master...'
 alias gd='git diff --name-status master...'
+
+rg() { grep -r -i --include='*rb' $1 .; }
+
