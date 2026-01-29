@@ -1,21 +1,14 @@
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(cua-mode t nil (cua-base))
+
+'(column-number-mode t)
+ 
+ '(cua-mode t)
  '(package-selected-packages
-   (quote
-    (go-mode ssass-mode yasnippet markdown-mode dockerfile-mode solarized-theme fill-column-indicator magit ruby-end sass-mode yaml-mode haml-mode)))
- '(show-paren-mode t))
+   '(yaml-mode sass-mode ruby-end fill-column-indicator solarized-theme dockerfile-mode yasnippet magit markdown-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -24,8 +17,11 @@
  )
 
 (require 'package)
-(add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
+;; and `package-pinned-packages`. Most users will not need or want to do this.
+;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
 
 
 
@@ -122,11 +118,25 @@
 
 
 (setq custom-safe-themes t)
-(load-theme 'solarized-light t)
 (setq x-underline-at-descent-line t)
-(setq solarized-use-less-bold t)
 
-(global-linum-mode t)
+(setq solarized-use-less-bold t)
+(setq solarized-scale-markdown-headlines t)
+
+;; Avoid all font-size changes
+;; (setq solarized-height-minus-1 1.0)
+;; (setq solarized-height-plus-1 1.0)
+;; (setq solarized-height-plus-2 1.0)
+;; (setq solarized-height-plus-3 1.0)
+;; (setq solarized-height-plus-4 1.0)
+
+;; VVVVVVVVVVVVVVVVVVVVVV
+(load-theme 'solarized-light-high-contrast t)
+
+;;(load-theme 'solarized-zenburn t)
+
+;;(global-linum-mode t)
+(global-display-line-numbers-mode 1)
 
 ;;(require 'fill-column-indicator)
 ;;(setq fci-rule-column 75)
